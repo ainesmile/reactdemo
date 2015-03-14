@@ -10,13 +10,35 @@
         <div id="content"></div>
         <script type="text/jsx">
             
-
-            var CommentBox = React.createClass({displayName: 'CommentBox', //createClass:create a new React component
+            var CommentBox = React.createClass({ //createClass:create a new React component
                 render: function(){
                     return (
-                        React.createElement('div', {className: "commentBox"},
-                            "Hello, world! I am a CommentBox."
-                        )
+                        <div className="CommentBox">
+                            <h1>Comments</h1>
+                            <CommentList/>
+                            <CommentForm/>
+                        </div>
+                    );
+                }
+            });
+
+
+            var CommentList = React.createClass({
+                render: function(){
+                    return (
+                        <div className="commentList">
+                            Hello, I am a CommentList.
+                        </div>
+                    );
+                }
+            });
+
+            var CommentForm = React.createClass({
+                render: function(){
+                    return (
+                        <div className="CommentForm">
+                            Hello, I am a CommentForm.
+                        </div>
                     );
                 }
             });
@@ -25,7 +47,6 @@
                 React.createElement(CommentBox, null),
                 document.getElementById('content')
             );
-
 
 
 
